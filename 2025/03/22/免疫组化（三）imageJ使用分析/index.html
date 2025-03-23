@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>免疫组化（三）imageJ使用分析 | Rio</title><meta name="author" content="rio"><meta name="copyright" content="rio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="*上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。* *1 ImageJ软件的安装以及IHC profiler插件的安装* *2*  *2.1准备工作*  *2.2胞浆染色的操作步骤*  *2.3 胞核染色的操作步骤*  *2.4借助Macro简化分析过程* 3 *组化评分的录入技巧*  以下是整理">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>免疫组化（三）imageJ使用分析 | Rio</title><meta name="author" content="rio"><meta name="copyright" content="rio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。  使用ImageJ对组化结果进行分析的经验总结（2024.9.27）    1. ImageJ软件与IHC Profiler插件的安装1.1 ImageJ下载与安装    下载链接：https:&#x2F;&#x2F;imagej.nih.gov&#x2F;ij&#x2F;downl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="免疫组化（三）imageJ使用分析">
 <meta property="og:url" content="http://superiooo.github.io/2025/03/22/%E5%85%8D%E7%96%AB%E7%BB%84%E5%8C%96%EF%BC%88%E4%B8%89%EF%BC%89imageJ%E4%BD%BF%E7%94%A8%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Rio">
-<meta property="og:description" content="*上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。* *1 ImageJ软件的安装以及IHC profiler插件的安装* *2*  *2.1准备工作*  *2.2胞浆染色的操作步骤*  *2.3 胞核染色的操作步骤*  *2.4借助Macro简化分析过程* 3 *组化评分的录入技巧*  以下是整理">
+<meta property="og:description" content="上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。  使用ImageJ对组化结果进行分析的经验总结（2024.9.27）    1. ImageJ软件与IHC Profiler插件的安装1.1 ImageJ下载与安装    下载链接：https:&#x2F;&#x2F;imagej.nih.gov&#x2F;ij&#x2F;downl">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://superiooo.github.io/image/astronaut.jpg">
 <meta property="article:published_time" content="2025-03-22T14:41:38.000Z">
-<meta property="article:modified_time" content="2025-03-23T01:51:29.255Z">
+<meta property="article:modified_time" content="2025-03-23T01:59:37.312Z">
 <meta property="article:author" content="rio">
 <meta property="article:tag" content="bio-protocol">
 <meta name="twitter:card" content="summary">
@@ -146,27 +146,20 @@
   isHighlightShrink: false,
   isToc: true,
   isShuoshuo: false
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/灯塔.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Rio</span></a><a class="nav-page-title" href="/"><span class="site-name">免疫组化（三）imageJ使用分析</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">免疫组化（三）imageJ使用分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-22T14:41:38.000Z" title="发表于 2025-03-22 22:41:38">2025-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-23T01:51:29.255Z" title="更新于 2025-03-23 09:51:29">2025-03-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><em><strong>*上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。*</strong></em></p>
-<p><em><strong>*1 ImageJ软件的安装以及IHC profiler插件的安装*</strong></em></p>
-<p><em><strong>*2*</strong></em> </p>
-<p><em><strong>*2.1准备工作*</strong></em></p>
-<p> <em><strong>*2.2胞浆染色的操作步骤*</strong></em></p>
-<p> <em><strong>*2.3 胞核染色的操作步骤*</strong></em></p>
-<p> <em><strong>*2.4借助Macro简化分析过程*</strong></em></p>
-<p><strong>3</strong> <em><strong>*组化评分的录入技巧*</strong></em></p>
-<p> 以下是整理后的层级化文档内容，保留原文信息并优化结构：</p>
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/灯塔.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Rio</span></a><a class="nav-page-title" href="/"><span class="site-name">免疫组化（三）imageJ使用分析</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">免疫组化（三）imageJ使用分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-22T14:41:38.000Z" title="发表于 2025-03-22 22:41:38">2025-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-23T01:59:37.312Z" title="更新于 2025-03-23 09:59:37">2025-03-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>上一篇内容我们讲述了如何使用SlideViewer进行截图，当我们获取了一张组织切片的图像后，需要借助软件量化，以确定某蛋白在组织学层次的表达水平。</p>
 <hr>
-<h3 id="使用ImageJ对组化结果进行分析的经验总结"><a href="#使用ImageJ对组化结果进行分析的经验总结" class="headerlink" title="使用ImageJ对组化结果进行分析的经验总结"></a><strong>使用ImageJ对组化结果进行分析的经验总结</strong></h3><p><strong>2024.9.27）</strong>  </p>
+<h3 id="使用ImageJ对组化结果进行分析的经验总结"><a href="#使用ImageJ对组化结果进行分析的经验总结" class="headerlink" title="使用ImageJ对组化结果进行分析的经验总结"></a><strong>使用ImageJ对组化结果进行分析的经验总结</strong></h3><p><strong>（2024.9.27）</strong>  </p>
 <hr>
 <h4 id="1-ImageJ软件与IHC-Profiler插件的安装"><a href="#1-ImageJ软件与IHC-Profiler插件的安装" class="headerlink" title="1. ImageJ软件与IHC Profiler插件的安装"></a><strong>1. ImageJ软件与IHC Profiler插件的安装</strong></h4><p><strong>1.1 ImageJ下载与安装</strong>  </p>
 <ul>
 <li><p>下载链接：<a target="_blank" rel="noopener" href="https://imagej.nih.gov/ij/downl">https://imagej.nih.gov/ij/downl</a>  </p>
 </li>
 <li><p>安装步骤：根据官网指引完成安装（如下图）。  </p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926614.jpg" alt="img"> </p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926609.jpg" alt="img"> </p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926637.jpg" alt="img"></p>
-</li>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926614.jpg" alt="img" style="zoom:67%;" /> 
+
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926609.jpg" alt="img" style="zoom:67%;" /> 
+
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926637.jpg" alt="img" style="zoom:67%;" /></li>
 </ul>
 <p><strong>1.2 IHC Profiler插件安装</strong>  </p>
 <ul>
@@ -177,7 +170,8 @@
 <li><p>将IHC Profiler文件夹放入ImageJ的<code>Plugins</code>目录。  </p>
 </li>
 <li><p>重启ImageJ。</p>
-<p> <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323092424437.jpeg" alt="img"></p>
+ <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323092424437.jpeg" alt="img" style="zoom:67%;" />
+
 <p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926649.jpg" alt="img"></p>
 </li>
 </ol>
@@ -186,14 +180,14 @@
 <ol>
 <li><p>将<code>IHC_Profiler.txt</code>文件放入ImageJ的<code>macros</code>文件夹。  </p>
 </li>
-<li><p>点击菜单栏：<code>Plugins &gt; Macros &gt; Install</code>，选择该宏文件。<br>  【<strong>注意</strong>：每次使用前需按照下图步骤重新安装插件，否则结果可能误差出现极大！！】</p>
+<li><p>点击菜单栏：<code>Plugins &gt; Macros &gt; Install</code>，选择该宏文件。<br> 【<strong>注意</strong>：每次使用前需按照下图步骤重新安装插件，否则结果可能误差出现极大！！】</p>
 </li>
 </ol>
-<p>  <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926663.jpg" alt="img"> </p>
+  <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091926663.jpg" alt="img" style="zoom:67%;" /> 
+
 <p>  然后点击****Plugins -&gt; Macros -&gt; Install****，选择该txt文件，即可在Plugins -&gt; Macros中找到该宏：</p>
 <p>  <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927561.jpg" alt="img"> </p>
-<p>  <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927609.jpg" alt="img"></p>
-</li>
+  <img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927609.jpg" alt="img" style="zoom: 67%;" /></li>
 </ul>
 <hr>
 <h4 id="2-组化分析准备工作"><a href="#2-组化分析准备工作" class="headerlink" title="2. 组化分析准备工作"></a><strong>2. 组化分析准备工作</strong></h4><p><strong>2.1 常见评分方法</strong>  </p>
@@ -207,16 +201,17 @@
 <li>Low Positive (121-180)：赋2分  </li>
 <li>Negative (181-236)：赋1分</li>
 </ul>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927654.jpg" alt="img"></p>
-</li>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927654.jpg" alt="img" style="zoom:67%;" /></li>
 </ul>
 </li>
 <li><p><strong>平均光密度法</strong></p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323093733857.jpeg" alt="img"></p>
 </li>
+</ol>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323093733857.jpeg" alt="img" style="zoom:67%;" />
+
+<ol>
 <li><p><strong>阳性细胞计数法</strong></p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927780.jpg" alt="img"></p>
-</li>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091927780.jpg" alt="img" style="zoom:67%;" /></li>
 </ol>
 <hr>
 <h4 id="3-操作步骤详解"><a href="#3-操作步骤详解" class="headerlink" title="3. 操作步骤详解"></a><strong>3. 操作步骤详解</strong></h4><p><strong>3.1 胞浆染色分析</strong>  </p>
@@ -230,12 +225,15 @@
 <li><p>选择<code>Cytoplasmic Staining（胞浆染色）</code>模式，勾选<code>H DAB</code>（与DAB显色相关），点击<code>OK</code>（参考文档中图12-图15）。  </p>
 </li>
 <li><p>获取评分结果，关闭无关弹窗（如Histogram）。  </p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928118.jpg" alt="img"></p>
-<p>选择H DAB点击OK【该步骤与免疫组化种DAB显色步骤有关】<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928576.jpg" alt="img"></p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928118.jpg" alt="img" style="zoom:80%;" />
+
+<p>选择H DAB点击OK【该步骤与免疫组化种DAB显色步骤有关】<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928576.jpg" alt="img" style="zoom:80%;" /></p>
 <p>得到评分结果如图：</p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928606.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928606.jpg" alt="img" style="zoom:50%;" /> 
+
 <p>【在实际操作过程中，不只会出现Log对话框，还有Histogram等，但并不是我们需要的，关闭即可】</p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928648.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928648.jpg" alt="img" style="zoom: 67%;" /> 
+
 <p>【注意不是<em><strong>*Plugins &gt; IHC profiler，否则会得到*</strong></em><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929283.jpg" alt="img">****这样的报错警告****】</p>
 </li>
 </ol>
@@ -254,7 +252,8 @@
 </li>
 </ol>
 <p>选择核染色mode，勾选H DAB得到如下界面：</p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928735.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091928735.jpg" alt="img" style="zoom:80%;" /> 
+
 <hr>
 <h4 id="4-批量处理：使用宏简化分析"><a href="#4-批量处理：使用宏简化分析" class="headerlink" title="4. 批量处理：使用宏简化分析"></a><strong>4. 批量处理：使用宏简化分析</strong></h4><p><strong>4.1 录制宏</strong>  </p>
 <ol>
@@ -272,20 +271,30 @@
 </ol>
 <p>我们知道，组化图像的分析往往百张起步，每一张图片都经历以上步骤将耗费大量的时间，且容易错误，所以笔者摸索了如下技巧，可供参考！</p>
 <p>首先，将待分析的文件保存在一个位置，确定其文件路径：</p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929320.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929320.jpg" alt="img" style="zoom:67%;" /> 
+
 <p>右键点击“属性”即可知道文件路径，而后在imageJ中点击Plugins &gt; Macros &gt; Record</p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929359.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929359.jpg" alt="img" style="zoom: 50%;" /> 
+
 <p>得到如下界面：</p>
 <p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929403.jpg" alt="img"> </p>
 <p><em><strong>*此时按照所需步骤操作，得到如下指令：*</strong></em></p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929648.jpg" alt="img"> </p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929785.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929648.jpg" alt="img" style="zoom:50%;" /> 
+
+
+
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929785.jpg" alt="img" style="zoom: 33%;" /> 
+
 <p><em><strong>*得到如下界面*</strong></em></p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929827.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929827.jpg" alt="img" style="zoom: 33%;" /> 
+
 <p><em><strong>*将指令拷贝进入运行框，将待分析的文件路径拷贝如INPUT，将OUTPUT设置成另一个文件夹。*</strong></em></p>
 <p><em><strong>*【该方法原本是用于简化大批量图片处理的过程，所以输出的是图片，但我们需要的是Log，所以图片的输出位置和格式没有要求】*</strong></em></p>
 <p><em><strong>*之后，我们便可以在一个log中直接得到多张图片的分析结果，直接将其保存入对应的文件夹即可。*</strong></em></p>
-<p><img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929874.jpg" alt="img"> </p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20250323091929874.jpg" alt="img" style="zoom: 50%;" /> 
+
+
+
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#赋分法</span><br><span class="line">run(&quot;IHC Profiler&quot;, &quot;mode=[Cytoplasmic Stained Image] vectors=[H DAB]&quot;)</span><br><span class="line"></span><br><span class="line">#AOD</span><br><span class="line">run(&quot;8-bit&quot;);</span><br><span class="line">run(&quot;Calibrate...&quot;, &quot;function=[Uncalibrated OD] unit=[Uncalibrated OD] text1= text2= show&quot;);</span><br><span class="line">setAutoThreshold(&quot;Default&quot;);</span><br><span class="line">//run(&quot;Threshold...&quot;);</span><br><span class="line">resetThreshold;</span><br><span class="line">setAutoThreshold(&quot;Default&quot;);</span><br><span class="line">setThreshold(0, 125, &quot;raw&quot;);</span><br><span class="line">run(&quot;Set Measurements...&quot;, &quot;area integrated limit display redirect=None decimal=3&quot;);</span><br><span class="line">run(&quot;Measure&quot;);</span><br><span class="line"></span><br><span class="line">#阳性占比</span><br><span class="line">run(&quot;RGB Stack&quot;);</span><br><span class="line">setSlice(3);  </span><br><span class="line">setAutoThreshold(&quot;Default&quot;);</span><br><span class="line">//run(&quot;Threshold...&quot;);</span><br><span class="line">setAutoThreshold(&quot;Default&quot;);</span><br><span class="line">setThreshold(0, 125, &quot;raw&quot;);</span><br><span class="line">run(&quot;Set Measurements...&quot;, &quot;area mean integrated area_fraction limit display redirect=None decimal=3&quot;);</span><br><span class="line">run(&quot;Measure&quot;);</span><br><span class="line"></span><br><span class="line">#请手动调整阈值</span><br></pre></td></tr></table></figure>
 
 
