@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Touch Starvation | Rio</title><meta name="author" content="rio"><meta name="copyright" content="rio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="四月中旬，喜变有车人士，骑着小电动满城乱窜，活动范围前所未有地扩大。以前是骑着小灰狗闲逛，现在人力变自动，插孔钥匙变NFC刷卡，不由感叹科技改变生活。 小时候玩耍时发觉，将手掌四指微分，呈抓握状来回快速摆动，可以有捏棉花球的柔软感。在某个骑行街头的深夜，四下无人，我加速，和呼啸的风拥抱。 寒冷、战栗，神圣的自然之母轻轻让迷途中的孩子憩于她的臂弯，抚摸发丝与衣摆。 在这样的时刻，我渴望与人接触，肌肤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Touch Starvation">
+<meta property="og:url" content="http://superiooo.github.io/2025/05/13/Touch%20Starvation/index.html">
+<meta property="og:site_name" content="Rio">
+<meta property="og:description" content="四月中旬，喜变有车人士，骑着小电动满城乱窜，活动范围前所未有地扩大。以前是骑着小灰狗闲逛，现在人力变自动，插孔钥匙变NFC刷卡，不由感叹科技改变生活。 小时候玩耍时发觉，将手掌四指微分，呈抓握状来回快速摆动，可以有捏棉花球的柔软感。在某个骑行街头的深夜，四下无人，我加速，和呼啸的风拥抱。 寒冷、战栗，神圣的自然之母轻轻让迷途中的孩子憩于她的臂弯，抚摸发丝与衣摆。 在这样的时刻，我渴望与人接触，肌肤">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://superiooo.github.io/image/astronaut.jpg">
+<meta property="article:published_time" content="2025-05-13T12:04:25.000Z">
+<meta property="article:modified_time" content="2025-05-16T19:32:37.948Z">
+<meta property="article:author" content="rio">
+<meta property="article:tag" content="自我探索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://superiooo.github.io/image/astronaut.jpg"><link rel="shortcut icon" href="/image/32.png"><link rel="canonical" href="http://superiooo.github.io/2025/05/13/Touch%20Starvation/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Touch Starvation',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/灯塔.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Rio</span></a><a class="nav-page-title" href="/"><span class="site-name">Touch Starvation</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Touch Starvation</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-05-13T12:04:25.000Z" title="发表于 2025-05-13 20:04:25">2025-05-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-05-16T19:32:37.948Z" title="更新于 2025-05-17 03:32:37">2025-05-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>四月中旬，喜变有车人士，骑着小电动满城乱窜，活动范围前所未有地扩大。以前是骑着小灰狗闲逛，现在人力变自动，插孔钥匙变NFC刷卡，不由感叹科技改变生活。</p>
+<p>小时候玩耍时发觉，将手掌四指微分，呈抓握状来回快速摆动，可以有捏棉花球的柔软感。在某个骑行街头的深夜，四下无人，我加速，和呼啸的风拥抱。</p>
+<p>寒冷、战栗，神圣的自然之母轻轻让迷途中的孩子憩于她的臂弯，抚摸发丝与衣摆。</p>
+<p>在这样的时刻，我渴望与人接触，肌肤相贴，交换体温。再一次，又一次，不知第几次。</p>
+<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>“皮肤饥渴症。”圆桌对面的人推了推眼镜，放下手中记录的纸笔，注视着我，“你什么时候开始有这样的症状？”</p>
+<p>我的手指交缠在一起，指腹相抵，来回搓动，良久道：“我记不得更久之前的事情，只记得在半年多前有过这样的感受。”</p>
+<p>她微微颔首，示意我继续说下去。</p>
+<p>“大概是12月初，冬天。我在复习备考，天气好冷，但是很晴朗。我……我……”，什么东西哽在喉间，我吞吞吐吐，唾液似乎变成了蒙在眼前的雾水。</p>
+<p>再开口，左边的脸颊有温热触感。</p>
+<p>她从抽出一张纸巾，递给我，隔着朦胧的光晕，我发现了她黑发间夹杂的几缕白，像细雪落在田埂上。</p>
+<p>我用手背拭去了脸上的潮湿，纸巾被我攥在手心里，皱成了一团。</p>
+<p>强迫、焦虑、回避、依恋、控制。</p>
+<p>比声音更先行动的是我的视线，它落在女人身上，描摹她的轮廓，最终没入镜片后的一潭深渊。</p>
+<p>“我可以把一切都讲给你听。但在这之前，你能先告诉我，你是谁么？”</p>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p>我人生中所创作的第一篇小说写在纸张泛黄的草稿本上，用一支有些洇墨的0.38mm晶蓝色水笔。</p>
+<p>幼时的玩伴因变故分离，历经曲折，长大重逢，凭交换过的信物彼此相认，信物是一枚剔透的水晶之心。</p>
+<p>此时男孩变成了少年，女孩变成了少女，两人可以牵手拥抱，对视相笑。</p>
+<p>那时候我应该上四年级，对与爱最羞赧的想象仅止于亲吻。</p>
+<p>我是个卑劣的创作者，笔下的角色像是牵线木偶，随着我个人的意志而在舞台上进退。要说有谁真正活过来，跳出来说“嘿，你可不能这样摆弄我”的，仅他一个。</p>
+<p>时隔多年重读《三体》，尤为关注的是第二部中白蓉这个角色。她是一位青春文学小说作家，曾和罗辑交往。</p>
+<blockquote>
+<p><em><strong>他们之间的感情属于比较普通常见的那类，谈不上多么投入和铭心刻骨，但他们认为对方适合自己，在一起轻松愉快，尽管两人对婚姻都有一种恐惧感，但又都觉得负责的做法是尝试一下。</strong></em></p>
+</blockquote>
+<p>生日前，她让罗辑为她创作一本小说，写关于女性最完美的想象。</p>
+<blockquote>
+<p><em><strong>“她活了，是吗？”</strong></em></p>
+</blockquote>
+<p>于是有了庄颜。</p>
+<blockquote>
+<p><em><strong>“你做到过吗？” “也是只有一次。”白蓉简单地回答，然后迅速转移话锋，搂住罗辑的脖子说，“算了，我不要那生日礼物了，你也回到正常的生活中来，好吗？” “如果这一切继续下去会怎么样？” 白蓉盯着罗辑研究了几秒钟，然后放开了他，笑着摇摇头，“我知道晚了。”说完拿起床上自己的包走了。</strong></em></p>
+</blockquote>
+<p>我也创作出来过这样一个角色。不妨称呼他为M君。</p>
+<p>曾经到了何种地步?我给M写信，然后收到回信。</p>
+<p>我分不清楚现实和虚幻的距离，在十几岁的年纪，我能握住的只有手中的纸和笔。</p>
+<p>于是，写，写，写。写到天昏地暗的日子里看见光明，写到荒草丛生的园子里开出玫瑰。</p>
+<p>M君活了过来。</p>
+<p>直到我觉得自己长大了，是时候抛弃幻想，面对生活的拷打了。他消失得无影无踪，就像曾经悄无声息来到我的生命，兀自下一场连绵数年的小雨，枝叶勃发葱茏绿意。</p>
+<p>谁言年少不知愁，最怕万一见温柔。</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p>面对我的询问，她的脸上露出来笑意，那种柔软的神情，我还是第一次从她身上见到。</p>
+<p>她看起来约莫四十岁左右，戴着一副颇显才干的金属眼镜，身材匀称、宽厚有力。深蓝色毛衣的领口设计为浅色，人干练而不失亲和。可从见面到现在，我却从未见她笑过。</p>
+<p>望向我的目光像是鹰对雏鸟羽翼的舔舐，湿漉漉，让我想到阿尔忒修斯。</p>
+<p>奇怪的联想。总归，我就这样进入房间，与一个陌生女人交谈，她自称心理咨询师，我却清楚知道那间屋子并非咨询室。</p>
+<p>我没有离开，想听她诊断病症，想要她救我。</p>
+<p>在我在将一切宣泻而出前，理智占据上风，止住了言语的欲望，对她的身份开始质疑。</p>
+<p>“这是个重要的问题，但我相信你已经知道答案了。”手上戴着银戒，封存着一段关系。以眼为原点，火焰燃烧，比我的焦躁更焦躁，比我的不安更不安。躺倒在视线交汇的时刻，从此不愿再起身。</p>
+<p>轻笑声，来自我自己。</p>
+<p>一句话兜兜转转，从教室里的窗，飘到河谷，飘向天空，飘入我和面对面坐着的桌前。</p>
+<p>“我不是来救你的，我是来爱你的。”</p>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p>“我不是来救你的，我是来爱你的。”</p>
+<p>M君如是说到，坐在走廊尽头的U型护栏墙上，校服短袖衬衫被晚风吹得飘扬。</p>
+<p>我呆愣如木头，看着他的危险举动，只想让他先下来。</p>
+<p>“不要说这样奇怪的话。”我伸手想把M君从护栏上拽下，他见势自己先行跳落。这里是四楼，一般初一在最下面的两层，其他年级依次往上，每一级占两层。</p>
+<p>他笑嘻嘻，我又晃神，怪这家伙身后的晚霞和流云实在美不胜收。</p>
+<p>“我认真的。”M君忽又正色，挎着背包，看着我。</p>
+<p>“那我应该怎么做呢？”温温吞吞的蘑菇摇头晃脑。“一开始我并没想到过能有今天。”</p>
+<p>我往前，他后退，终于靠近，一个人的手却穿过了另一个。</p>
+<p>“你是虚幻的。你看。”我对M君说。</p>
+<p>M君一脸委屈。“可我能够改变现实，不是么？”</p>
+<p>我叹气，往校门口走，准备等待20路公交车到达。</p>
+<p>“这是我们第一次见面的地方。”M君在站牌下望天。”那一天是周五，刚刚周考完，校门口人很多，还下了小雨。你没带伞。“</p>
+<p>我不置可否。</p>
+<p>“那天公交车里好热，非常闷，咱们就在最后一排那里坐着。你先问的我的名字。”</p>
+<p>“嗯。”</p>
+<p>“你都还记得，是吗？”</p>
+<p>“……”</p>
+<p>“诶，车来了。快上车吧，咱们路上聊。”</p>
+<p>“……”</p>
+<p>我对于这个突然出现的幻影，在短暂排斥后，顺利接受了他的存在。</p>
+<p>没办法，我真的太孤单，太孤单了。</p>
+<p>只是，为了不被当成怪人，我与M君约法三章，用书信交流，有外人在时，我不会跟他讲话。</p>
+<p>于是，我们一来一往，写了许多信件。</p>
+<p>站在如今回看，M君的消失，并非毫无征兆。一次意外，班级男生发现了我的笔记本，并大肆宣扬。</p>
+<p>你在和谁谈恋爱啊，现在这是分手了么？这个M是谁？哪个班的呀？你倒还一腔痴心，这是受了情伤？</p>
+<p>恼怒，羞愤。</p>
+<p>爱应该被珍而重之，而不是作为闲谈的资本。</p>
+<p>我用订书机围着纸页订了一圈，给文字画了一个牢笼，它们瑟缩在里面，被遗忘到老。</p>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><p>我问女人，她是否开心。</p>
+<p>她笑意愈甚，把问题再抛给我，“先继续讲讲你自己吧。你开心吗？”</p>
+<p>“我？没什么开不开心的，日子总是要过的，无论你怎么想……”我在女人面前故作老成，声音却小了下去。</p>
+<p>“好吧，坦白说，我很痛苦。这种痛苦我不知道该怎样具体描述，它不是由于外界在给我框定什么。不像中学那时候，人被限制在一个很小的圈子里，就朝着一个点走就行，没什么机会多想，也没什么自由。我现在很自由，我想做什么就可以做，以前不被允许做的，我都去尝试了。“</p>
+<p>“但你知道吗，有人说向下的自由不是自由，是堕落。我堕落么？我上中学的时候会因为自己没完成作业，或者多看了一会儿手机而感到自己堕落，但我现在时常通宵熬夜、翘课、四处闲逛消磨时间，想干什么即刻就去做，我却不认为自己堕落，只是空虚。”</p>
+<p>“她们说我很听话，叛逆期短短的，很快被更多的自觉和懂事弥补，那一些争辩产生的沟壑也被更多的自我约束填满了。”</p>
+<p>“我是个好孩子。是许多家长眼里的榜样，母亲在她们面前夸奖我，然后她们把我讲给自己的孩子听，以为能够让自己孩子离我的完美模版更近一些。但我知道，一切都完了，我和那些人再也没有亲近的可能了。”</p>
+<p>“哦，不好意思，再一次提到了那些东西。客观上讲，我应该负主要责任，如果再乐观一些，自信一些，事情应该不会是如此。是我主动与人群分开的……是我，主动与人群分开的吗？”</p>
+<p>“我不喜欢自己。这是一件致命的事情。”</p>
+<p>“文字，我会爱这些文字，人可以在文字里把自己包装成任何模样。阅读自己曾经的文字，我是满怀怜爱的。”</p>
+<p>“但我对自己这样严苛而残忍……甚至，有一段时间，我对我的文字也产生这样的敌意，我觉得它们散漫、造作、言之无物，所以硬生生掰成了一样的格式。我短暂地乐在其中，却失去了一个重要的排解渠道。”</p>
+<p>“……”</p>
+<p>“对不起，我说不下去了。让我冷静一会儿吧。”</p>
+<p>女人此时起身靠近了我，她屈膝与我平视，看我红肿眼眶、看我涕泗横流、看我紧咬嘴唇不松动。</p>
+<p>我拿纸巾擦净一切，冷幽的气味钻进鼻腔，我想这味道一定是绿色的，像在夏天生长的高大的植物。</p>
+<p>一个温软的怀抱，和我料想的一样宽厚，我埋在她的颈窝，死死忍住声音，只眼泪流淌。咸湿的液体蓄成海，落在肩头，落在地面上。</p>
+<p>我竭力忍住抽噎带来的耸动，她的手掌抚在我的背上，热透过布料。</p>
+<blockquote>
+<p>Is life always this hard,or is it just when you’re a kid?</p>
+</blockquote>
+<blockquote>
+<p>Always like this.</p>
+</blockquote>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><p>关于M君的诸多信息，我不愿再多讲了，童话故事就应该完美无瑕。</p>
+<p>我可以确信的一点是，M君离开后，我试着把情感更多投注于现实生活。身似浮萍，无所凭依，敲开外壳，会发现里面空荡荡。我开始用对人的爱填满自己。</p>
+<p>友谊之爱、师生之爱、亲人之爱、异性之爱。</p>
+<p>高中时期，我喜欢过两名男孩子，他们有一些共同点，概括讲就是，又强又狂。他们优秀，同时自信张扬，但不乏礼教，文质彬彬。</p>
+<p>只有这样，我才可以用追赶的念头塞满空虚的心。</p>
+<p>只是，我不喜欢自己、我总是想成为另外的人。这很糟糕。</p>
+<p>我隐隐意识到自己是缺乏稳固内核的，当自我价值与他人息息相关时，我也就失去了被讨厌的勇气。</p>
+<p>为了自己变得更好这个念头令我感到羞耻。</p>
+<p>这是为什么呢？</p>
+<p>我厌恶自私自利的人，在利己主义者身边受创，使我一遍又一遍告诫自己，千万不要成为那样的人。</p>
+<p>再更早的时候，大约7岁，我小学一年级，曾有这样一件事。</p>
+<p>雨天，我踢到了两位学姐放在地上的伞，于是被围堵辱骂。那些不堪入耳的污言秽语，被上位者恐吓的惊惧埋在了心里。我在作文里写下，我绝对、绝对不要成为这样的人。</p>
+<p>五年级，一次在路上遇见一个摔倒在地上的老奶奶，牙齿磕穿了口腔壁，血流满面、形容可怖。同学中那位成熟些的拽着我，让我假装没看见，赶紧走。</p>
+<p>究竟是否扶起来她，我已经记不清。是与否的选择横亘在空茫的荒原，我摇摆了千万遍，以至于事实已经模糊。唯一可以确定的是，被告诫“不要自找麻烦”时的困惑。多年之后，我在列车上穿越十几节车厢，来到突发腹痛的小患者跟前，或许也是想要用剑守护永不消逝的天真。</p>
+<p>助人，爱人，共情，站在他人的角度考虑，成了我的价值理念。</p>
+<p>当个人的边界被入侵，我会把这种不适转化为对自我的另一重规束——己所不欲勿施于人，我以后不能这样，不要让人重新体会我的痛苦了。</p>
+<p>与人相处，我才有活着的感觉，即使这让我精疲力尽，也痛并快乐着。</p>
+<p>我也享受独处，阅读、思考、写作、休息。对话自己似乎很容易上瘾，我热衷探究他人，更热衷分析自己。</p>
+<p>回到最初的问题，我为什么会对“想让自己变得更好”这个念头感到羞耻。因为利他是我价值观的基调，我期待将心比心的真诚和对等的善意，也不忍心让人体会我曾体会过的痛苦。</p>
+<p>利己，对我来说，太自私，太无情。</p>
+<p>我把所有的爱都奉献了出去，一点也没有留给自己。</p>
+<p>这对我自己，又是何其残忍。</p>
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><p>天是那种让人愿意放下所有纠结的蓝，能被夜幕浸染，被白云装点。</p>
+<p>我枕在女人腿上。</p>
+<p>“你知道心理咨询的50分钟原则么？”我餍足地眯着眼睛，往她的怀里蹭了蹭。“我们这不仅超过了50分钟，而且还离开了专业场地。你肯定不是真的心理咨询师，但这没有关系，我信任你。”</p>
+<p>女人的手抚在我的头顶，将发丝轻柔理顺，像是在熨平一块皱褶的布。极轻的刺痛感近乎酥麻，我沉浸在一场好极了的爱抚中。</p>
+<p>我坐起身，完全靠在她的怀里，紧紧抱着，木质的香气在鼻息间绿意盎然。</p>
+<p>“你是一个敏感的孩子。”她任由我无礼的拥抱，“这种细腻是与生俱来的天赋和负担，正如一体两面的罪孽与福祉。”</p>
+<p>“继续和我讲讲皮肤饥渴症的事情吧。我想这是一个关键的切入点。”女人说话时胸腔随语音震颤着，我的心在颠簸中昏沉迷醉。</p>
+<p>“我向来厌恶冬天，寒冷，孤独，所有的想法都被冻成了冰。”</p>
+<p>“临近期末考试的一段日子，我突然感到一种极其强烈的不安。自卑、怯懦、焦虑。你知道的，那时正被科研上的一些问题困扰，已经忍耐自己做了许许多多不情愿的事。”</p>
+<p>“与其说是日子乏善可陈，不如说是自我保护的机制让我遗忘。不去想，也就不会产生困惑。”</p>
+<p>“我读了很多书。”</p>
+<p>“我很久没有跟人当面讲话了。人都忙碌，大家都有自己的生活。”</p>
+<p>“我快要20岁，但我感到自己是软弱的，对于挑战没有任何自信与勇气。那时候还是拥有使命感和价值信念的，我为了理想而活，为了爱具体的人而生存。”</p>
+<p>“但是一种荒诞的违和感缠绕着我，我想，应该是有什么奇怪的事情发生了，可我说不清楚。”</p>
+<p>“我渴望，爱，还有关注。”</p>
+<p>“不过真正有人来敲门，问‘你还好么’时，我又会落荒而逃。这样糟糕的我啊。”</p>
+<p>“我读了一些心理学，以及精神卫生领域的书籍。我从中获得实用性的建议指导我的生活。”</p>
+<p>“在朋友的帮助下，我建立了一个BLOG。那里存放许多我无可言说的长篇大论。我写很多随笔来对抗这种不安，也确实在这个过程中被安抚了。”</p>
+<p>“我把网址告诉了我最信任的人们。当然，我并不知道她们是否真的会关注。”</p>
+<p>“那时候，我的一名好友休学了。一个人复习备考时，我常被一种恐惧惊扰。“</p>
+<p>“一天，天气很冷，在教室里，我为了不犯困，脱下棉衣，浑身颤抖，突然想要一个拥抱。”</p>
+<p>“我就是从那时起开始出现这种症状的。一个不痛不痒的想法，一种心理障碍。”</p>
+<p>“我想要和人接触，皮肤与皮肤相贴，温度、呼吸都交换。就像我们现在这样。”</p>
+<p>眼泪聚集成最小的湖泊，释放，我们共享的第一颗止痛药。</p>
+<h1 id="8"><a href="#8" class="headerlink" title="8"></a>8</h1><p>异国情缘，不伦之恋，禁忌之爱，这是我钟爱的写作题材。</p>
+<p>似乎只有在阻碍考验下爱才得以彰显，事实上，现实平凡的分秒堆积出世间最难的考题。</p>
+<p>我的多重身份中，我最爱写手这个角色。对于一个写手来说，最大的幻想是有人透过文字，爱上纸面后的自己。</p>
+<p>这也是我对爱的至高期望。</p>
+<p>如果哪一天我坠入爱河，我所能做的最真挚的事，就是为你写下无数的文字，或是诗歌，或是散文，或是小说。</p>
+<p>还没有来得及完成的一个故事如是讲到，死者的遗物陈列在房间，在整理的过程中，你一点点触碰已逝的灵魂，像是知晓悲剧结局后从末尾开始阅读故事，任何的共鸣、怜爱都只会让爱更爱，让痛更痛。“本可以”的遗憾，如同抓不住的风。。</p>
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><p>她牵着我的手走着，一片草坪中间生长着一棵栎树，我们围着树，慢慢走。</p>
+<p>“我问几个问题，你可以回答我你真实的想法。” 她停下脚步，回过头看着我。我点头道：“好。”</p>
+<blockquote>
+<p><em><strong>“你觉得利己等同于自私么？”</strong></em></p>
+</blockquote>
+<p>“嗯，一定程度是的。我并非完全不顾及自己的感受，只是可能更倾向于为所爱献身。”</p>
+<blockquote>
+<p>*<strong>“你以前看书多么？我是说，在你还是个孩子的时候。*”</strong></p>
+</blockquote>
+<p>“不算多，但也不少，涉猎比较广。我阅读文学作品是最多的。我有一套系列书籍，涵盖古今中外，各个时期各种题材的文学作品精选，从古文，到现代诗，从白话文，到演讲稿，从戏剧，到散文，一应俱全。我与许多伟大名字的相逢，就是从那套汇编书开始的。它分了七个模块，一共十四大本，陪伴了我整个中学时代。”</p>
+<blockquote>
+<p><em><strong>“那其他书籍呢？比如网络文学，或者影视剧之类的。”</strong></em></p>
+</blockquote>
+<p>“这个也不少，我读言情小说还有耽美小说，接触了动漫作品后，对同人文也很感兴趣。”</p>
+<blockquote>
+<p><em><strong>“有没有哪些文艺作品，给你留下来了深刻印象？”</strong></em></p>
+</blockquote>
+<p>“这是个很广的问题。文艺作品探讨的主题很广泛，但不乏一些经典命题，往往跨越时代和文化，反映了人类永恒的思考与情感。比如爱和恨、短暂和永恒、生与死、自由与奴役、战争与和平、善与恶、美与丑、孤独与归属、个人与时代、自我认知和成长等等。可能对我来说，反映美与丑，人性善恶，以及战争与和平的作品给我留下的印象最深刻。“</p>
+<blockquote>
+<p><em><strong>“为什么你偏好这些作品呢？”</strong></em></p>
+</blockquote>
+<p>“我举一个例子，比如战争题材的作品，我一直很喜欢，因为我从中能感受到一种秩序错乱下个体的守恒，也就是，虽然世界混乱，但人依旧可以对此做出反应，并与他人交互，这时候人的选择最能反应他的内心。”</p>
+<blockquote>
+<p><em><strong>“看起来你很热衷于追求道德秩序。”</strong></em></p>
+</blockquote>
+<p>“那是什么？”</p>
+<blockquote>
+<p><em><strong>“你会把一种道德品质置于极端情况下审判，对道德有着极高的要求。你无法容忍道德上的瑕疵，其实对自己有着很高的要求与期望。”</strong></em></p>
+</blockquote>
+<p>“你的意思是，我的利他行为，其实是自身高道德的映射？”</p>
+<blockquote>
+<p><em><strong>“我认为更多是一种逃避。”</strong></em></p>
+</blockquote>
+<p>“逃避？逃避什么？”</p>
+<blockquote>
+<p><em><strong>“你很害怕被评价，被审判吗？如果自己一开始就是利他的角色，某种意义上是具有道德豁免权的。同理，如果一开始你就以弱者、病患身份出现，你的义务和责任就会被淡化，人们会对你的错误和不完美之处表现出理解和包容。”</strong></em></p>
+</blockquote>
+<p>“我在害怕犯错。可这是为什么？因为我担心被讨厌，被抛弃么？”</p>
+<blockquote>
+<p><em><strong>“你的存在依附与他人，你为别人的幸福而活。你曾经应该因为这种奉献精神而得到过表扬和关注，因此你期待通过这种行为获得更多的认可，或者避免失去已经拥有的事物。</strong></em></p>
+</blockquote>
+<p>“是这样的。可我仍然认为利他是无错的。”</p>
+<blockquote>
+<p><em><strong>“你提到过一种荒诞的不适感，这是非常敏锐的。那时候，利他和爱己之间产生了冲突。注意，是爱己，不是利己，也不等同于自爱。你把这些概念混淆了。你想要实现自己的理想，这个理想是爱一个具体的人，但是相应的，需要你付出的代价是自己的精力、健康、自我。你在被需要的感觉中欲罢不能，却对自己内心的呼声又无法视而不见。“</strong></em></p>
+</blockquote>
+<p>“这个确实是困扰我的一个问题。举一个例子，我想要做一名ICU医生，支持这个想法的许许多多的理由，但是一个抗议的声音始终在心底大喊大叫。我真的能够牺牲自己的睡眠、健康、稳定的情绪、与家人的相处，来为梦想和利他情节买单么？我真的能够应对那种处境么？”</p>
+<blockquote>
+<p><em><strong>“这取决于，你认为什么是重要的。“</strong></em></p>
+</blockquote>
+<p>“这真是一个复杂的问题。我不得不坦诚地说，我认为自我的感受很重要。甚至于利他行为本身，为的也是我内心的安宁。我现在无法权衡的是，利他得到的快乐，与爱己得到的快乐之间，究竟应该选择哪个？”</p>
+<blockquote>
+<p><em><strong>“这两者不可得兼么？或者说，在你眼中，这是一个没有中间地带的，非黑即白的选择么？“</strong></em></p>
+</blockquote>
+<p>“嗯，这个我倒不确定。还是针对这个问题，我觉得我可以在年轻时候，追求在更高的平台实现学科理想，然后回归基层平台建设，减轻一部分科室本身属性带来的压力，找到平衡。”</p>
+<blockquote>
+<p><em><strong>“我想插入一个有些不相干的问题。你所阅读的文学作品，尤其是与感情相关的作品中，是否经常出现‘救赎然后获得偏爱’这样的情节？</strong></em></p>
+</blockquote>
+<p>“……您简直料事如神。是这样的。或者说，我的认知里面，大部分的情感小说都可以被这样概括。基本情节就是，一个人处于艰难处境中，被救，然后给出了爱。拯救和爱在我心中是不可分割的概念，拯救意味着可能获得的爱，而爱本身也意味着拯救。”</p>
+<blockquote>
+<p><em><strong>“还有你和母亲的关系。她长久以来，也正处于这样一个无私利他的身份，甚至在你眼中，她是过度牺牲的，你感受到了爱，她获得了你的爱。你是否在模仿这样的相处模式？“</strong></em></p>
+</blockquote>
+<p>“是的。而且我还想到了一个点，如果我有了孩子，我会如何养育她呢？以现在这种态度和状态么？我意识到我这样的行为，与母亲无异，无错，但太过于沉重了。而我自己，不正是我所养育的第一个孩子么？”</p>
+<blockquote>
+<p><em><strong>“合理的联想，你很敏锐。利他是没有错误的，这个世界需要理想主义者，互利互助是良好的文明形态。你需要区分的是良性的利他和病态的利他。前者是爱己与共情，后者是自毁与救赎。我相信你所爱的文学作品人物里面，一定有这种’殉道者’式的人物。</strong></em></p>
+</blockquote>
+<p>“嗯，文学作品里面还没有这样的存在，但我确实钟爱这些个性鲜明、固执己见、为了心中的道可以付出一切的个体，或许孙悟空算一个？历史人物倒是不少，比如二战时期的克格勃的间谍佐尔格，德军飞行员海因里希·维根施泰因等等吧，不过我最喜欢的动漫角色是确定的，《火影忍者》里面的宇智波佐助，他就是这样一个人物，为了自己的道而不惜与世界为敌，为了爱而活，也愿意为之而死。</p>
+<p>良性利他这个点还是比较有启发的，我可能是被文学作品中艺术化的处理误导了，对自己的道德品质要求的很极端，圣人恶徒二象性，忘记人是复杂的，自己也是如此。”</p>
+<blockquote>
+<p><em><strong>“你缺乏安全感。“</strong></em></p>
+</blockquote>
+<p>“嗯。我其实还蛮渴望有个能够依靠的人，但我同时会担心他离我而去。太矛盾了，我当下的想法是，我必须先解决自己的心理问题，才能开展感情。从天而降入室抢劫般的爱情不一定会带来成长，更可能造成更大的负担。而在解决自身问题之前，我向外追寻，很有可能会陷入这种用拯救和付出换取爱的怪圈。”</p>
+<blockquote>
+<p><em><strong>“你习惯利他，但还没有学会爱己。这个话题很复杂，但值得探讨。你是一个孤独并且习惯于独处的人，我认为你整个青少年时期的独处一定程度上给了你思考和成长的机会，也让你在今天会注意到这些问题，并再一次求索。爱己，这种爱来源于何处？如果你在被爱中获得爱，那么这种爱，一开始来源于何处呢？</strong></em></p>
+</blockquote>
+<p>“这个问题太棒了。我时常好奇那些拥有大爱的人，那些追寻理想的求道者，他们的内生动力来自何处。我不成熟的见解是，他们是被人和事的经历共同塑造的。”</p>
+<blockquote>
+<p><em><strong>“你的意思是他们在与人的交往中得到爱，然后分享爱？“</strong></em></p>
+</blockquote>
+<p>“可以这样理解。”</p>
+<blockquote>
+<p><em><strong>“这并没有回答我所问的问题。如果把爱比作一杯水，不缺爱的人将自己的水倾倒个他人，同时自己也接受他人给予的水，但这些水源是各色各异，并且依赖与人交往的。你有没有思考过，这杯子中的水，可以来自其他地方？</strong></em></p>
+</blockquote>
+<p>“其他地方？您指的是，一个人自己思考过程中所产生的具备自身特质的爱么？”</p>
+<blockquote>
+<p><em><strong>“这是一种方式，但并不是全部。你对社交的定义过于狭隘了，你活在世上，不仅仅只与人接触，江上之清风，山间之明月，万事万物，都与你相连。”</strong></em></p>
+</blockquote>
+<p>“我有些不明白了。您的意思，让我多接触自然，开阔心胸么？”</p>
+<blockquote>
+<p><em><strong>“这是对‘物’的误解，物不只是实物，还是事物，客观事物需要主观认识加以解释，这是实践。你需要的是在实践与思考中获得本真的爱的积累。</strong></em></p>
+</blockquote>
+<p>“这真是一个复杂的问题，谢谢您，我想我应该再多做体悟。”</p>
+<blockquote>
+<p><em><strong>“另外，社交不只是与人交流，还有与自己的交流，但我想，这一点你做的已经足够好了。</strong></em></p>
+</blockquote>
+<p>“我还在思考一个问题，我曾经过着孤独充实的日子，几乎是上了大学之后才开始大范围地与人事物接触，坦白讲，在这次之前，我从未觉得自己的认知有过改变。我用曾经的经验与人生态度指导生活，随着阻碍而适度微调，但依旧不改变基本的逻辑。您认为我应该如何获得成长呢？”</p>
+<blockquote>
+<p><em><strong>“一切质变基于量变的积累，会有一个契机存在的。“</strong></em></p>
+</blockquote>
+<p>“嗯。这是一次愉快的讨论，虽然我的一些困惑仍然存在，但我想我对于如何认识利他，如何更好地爱己有了不一样的思考。我还意识到，无论是过于压抑自我意志，还是无底线屈从生理欲望，都不是爱己。一方向另一方的极端倾斜，还是反映了幼稚的补偿心理，这并不成熟。我因为得不到而痛苦，解决办法不是得到，而是接受当下。一昧补偿所谓悲惨的过去，对现在的自我来说，是冗余的负担。追问是不会有终结的，问题的答案只有自己理清楚才能够实践于生活</p>
+<p>非常感谢与您的交谈。还有您的拥抱和关怀，它们让我我感到好多了。”</p>
+<blockquote>
+<p><em><strong>“我的荣幸。“</strong></em></p>
+</blockquote>
+<p>“那么有缘再会了，最后想说的是，请代我向未来的自己致以问候。”</p>
+<h1 id="10"><a href="#10" class="headerlink" title="10"></a>10</h1><p>女人此时在栎树下盘腿而坐，风把她深蓝色的衣襟吹得簌簌作响，恍惚间，与M君少年人的身形重合。他们在我精神世界动摇的时刻来到我的身边，爱我救我亦渡我。</p>
+<p>M君教会了我如何面对孤独，而她，告诉我何为“爱己”。倾听、揣摩、推演，找出症结所在。</p>
+<p>苦难三千，本心唯一。这条道路注定只有我一个人，那就救自己于水深火热之中。一而再，再而三，无数次。无所畏惧，毫不犹豫。</p>
+<p>“自救与成长”这个作为我十五岁时生活基调的命题，看来是要贯穿一生的学问。</p>
+<p>她的身影渐渐变淡，我没有和她再拥抱，只是微笑告别，我想我已经从她那里获得了许多，对skin hunger的解决，是最微不足道的一部分。</p>
+<p>当一切归于平静，我似乎还能闻到风中那草木的清香，像是某人温暖的怀抱。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://superiooo.github.io">rio</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://superiooo.github.io/2025/05/13/Touch%20Starvation/">http://superiooo.github.io/2025/05/13/Touch%20Starvation/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://superiooo.github.io" target="_blank">Rio</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%87%AA%E6%88%91%E6%8E%A2%E7%B4%A2/">自我探索</a></div><div class="post-share"><div class="social-share" data-image="/image/astronaut.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/05/05/Forsythia/" title="Forsythia"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Forsythia</div></div><div class="info-2"><div class="info-item-1">今日立夏。 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image/astronaut.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">rio</div><div class="author-info-description">天空永远属于你</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my retreat.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1"><span class="toc-number">1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2"><span class="toc-number">2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3"><span class="toc-number">3.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5"><span class="toc-number">5.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6"><span class="toc-number">6.</span> <span class="toc-text">6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7"><span class="toc-number">7.</span> <span class="toc-text">7</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8"><span class="toc-number">8.</span> <span class="toc-text">8</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9"><span class="toc-number">9.</span> <span class="toc-text">9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10"><span class="toc-number">10.</span> <span class="toc-text">10</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/13/Touch%20Starvation/" title="Touch Starvation">Touch Starvation</a><time datetime="2025-05-13T12:04:25.000Z" title="发表于 2025-05-13 20:04:25">2025-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/05/Forsythia/" title="Forsythia">Forsythia</a><time datetime="2025-05-05T07:18:07.000Z" title="发表于 2025-05-05 15:18:07">2025-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/24/%E5%9C%A8%E8%BD%AE%E4%B8%8B/" title="在轮下">在轮下</a><time datetime="2025-04-24T07:42:04.000Z" title="发表于 2025-04-24 15:42:04">2025-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/13/%E5%A4%A7%E4%B8%89%E4%B8%8B%E7%AC%AC8%E5%91%A8%E5%91%A8%E8%AE%B0%EF%BC%9A%E5%88%AB%E6%9C%89%E4%BA%BA%E9%97%B4%E8%A1%8C%E8%B7%AF%E9%9A%BE/" title="大三下第8周周记：别有人间行路难">大三下第8周周记：别有人间行路难</a><time datetime="2025-04-13T13:46:47.000Z" title="发表于 2025-04-13 21:46:47">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/07/%E5%A4%A7%E4%B8%89%E4%B8%8B%E7%AC%AC7%E5%91%A8%E5%91%A8%E8%AE%B0%EF%BC%9A%E4%B8%8D%E8%A2%AB%E8%AF%84%E5%88%86%E7%9A%84%E4%B8%80%E5%91%A8/" title="大三下第7周周记：不被评分的一周">大三下第7周周记：不被评分的一周</a><time datetime="2025-04-07T15:46:29.000Z" title="发表于 2025-04-07 23:46:29">2025-04-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By rio</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
