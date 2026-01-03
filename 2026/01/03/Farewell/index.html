@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Farewell | Rio</title><meta name="author" content="rio"><meta name="copyright" content="rio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="那缕头发被他供奉在乡人的圣祠中。那是个美丽的地方，位于一条长长的柳杉大道尽头，在陡峭的崖上，那悬崖秋天会被林火一样的红枫覆盖。悠长优雅的河水从云层高处倾泻而下，哺育圣祠脚下溪流中的各种游鱼。空气中满是叶子与松果的芬芳。   他觉得劳伦斯也会同意，那是个适合让Jack的灵魂安息的地方。  我跟她说，许多年前我就知晓了这部电影的存在，但一直舍不得看，没找到合适的机会。那时，我们坐在湖边的长椅上，看天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Farewell">
+<meta property="og:url" content="http://superiooo.github.io/2026/01/03/Farewell/index.html">
+<meta property="og:site_name" content="Rio">
+<meta property="og:description" content="那缕头发被他供奉在乡人的圣祠中。那是个美丽的地方，位于一条长长的柳杉大道尽头，在陡峭的崖上，那悬崖秋天会被林火一样的红枫覆盖。悠长优雅的河水从云层高处倾泻而下，哺育圣祠脚下溪流中的各种游鱼。空气中满是叶子与松果的芬芳。   他觉得劳伦斯也会同意，那是个适合让Jack的灵魂安息的地方。  我跟她说，许多年前我就知晓了这部电影的存在，但一直舍不得看，没找到合适的机会。那时，我们坐在湖边的长椅上，看天">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://superiooo.github.io/image/astronaut.jpg">
+<meta property="article:published_time" content="2026-01-03T01:22:21.000Z">
+<meta property="article:modified_time" content="2026-01-03T01:31:10.477Z">
+<meta property="article:author" content="rio">
+<meta property="article:tag" content="life">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://superiooo.github.io/image/astronaut.jpg"><link rel="shortcut icon" href="/image/32.png"><link rel="canonical" href="http://superiooo.github.io/2026/01/03/Farewell/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Farewell',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/灯塔.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Rio</span></a><a class="nav-page-title" href="/"><span class="site-name">Farewell</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Farewell</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-01-03T01:22:21.000Z" title="发表于 2026-01-03 09:22:21">2026-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-03T01:31:10.477Z" title="更新于 2026-01-03 09:31:10">2026-01-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p><em><strong>那缕头发被他供奉在乡人的圣祠中。那是个美丽的地方，位于一条长长的柳杉大道尽头，在陡峭的崖上，那悬崖秋天会被林火一样的红枫覆盖。悠长优雅的河水从云层高处倾泻而下，哺育圣祠脚下溪流中的各种游鱼。空气中满是叶子与松果的芬芳。</strong></em></p>
+</blockquote>
+<blockquote>
+<p><em><strong>他觉得劳伦斯也会同意，那是个适合让Jack的灵魂安息的地方。</strong></em></p>
+</blockquote>
+<p>我跟她说，许多年前我就知晓了这部电影的存在，但一直舍不得看，没找到合适的机会。那时，我们坐在湖边的长椅上，看天色变暗，水面上鸭子游弋。这样的散步长谈，已经许多次。黑暗中，她静静听，又说她曾看过，和我讲起那位著名的“太空怪人”与他的摇滚乐。</p>
+<p>2025年12月31日，这座城市和初雪一起迎接新年。漫天飞舞起洁白的雪花，飘落每个干净与不干净的角落。</p>
+<p>她戴着一顶酒红色的绒帽，帽尖微微弯出柔软的弧度，手揣在深亚麻色的棉服里。每每笑着望向我，我的心里便有什么在燃烧。</p>
+<p>天桥之下，行车如流水，各色灯光闪烁。她转身时，脸庞忽然生动明亮。寒风使我上扬的嘴角冻僵，成为半永久的神色。这个夜晚就是这样奇妙，我沉浸在令人发昏的幸福里。</p>
+<p>其实只是一场出乎预料的重逢，多一分少一秒都不会发生的巧合。</p>
+<p>ccd定格路灯下的雪夜，定格我们的身影。我在那个瞬间想到许多人，想到那些在我生命里存在过的、无比特别的女孩儿们，想到她们朝我伸出的手，想到一双双美丽的眼睛。</p>
+<p>扑通扑通，心在跳动，赞美这真挚的情谊，颂扬这精神的共鸣。</p>
+<p>她们中的每个人，都曾牵起我的手，往前走了一阵。有人智慧博学，处事淡然，有条不紊；有人正直光明，坚毅沉稳，心怀理想；有人细腻敏感，热爱生活，体察万物；有人幽默风趣，思维活跃，不落窠巢……如风、如光、如海、如天，每个人都是那样的温和而纯粹。空间的距离、时间的跨度，分隔了我和那些可爱的人们，我拾起笔，让那些金子般的时刻在我笔下永存。太过炽热的感情被搁置在我心里的角落，燃烧着，劈啪作响，不熄不灭。</p>
+<p>我们相遇时拥抱，又淡淡分别。不过，我总是想，一起走过那条路，要是再长一些就好了。</p>
+<p>某个时刻，我跟她说，今天真的很适合看那部电影呢。我没有说名字，但她了然，对视后又是一阵欢笑。在这样一个辞旧迎新的雪夜，这场偶遇就像Jack给Yonoi的吻，轻轻落在我的心里。</p>
+<p>告别2025，如果给我在意的人儿们留下一些话，那么我想说——</p>
+<p>谢谢你们出现在我的生命里。希望你们都能够幸福。</p>
+<p>新年快乐，我爱你们。</p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20260103092951316.jpg" alt="b9a3c70d002e1d4e1584ceb6754a195a" style="zoom: 50%;" />
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://superiooo.github.io">rio</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://superiooo.github.io/2026/01/03/Farewell/">http://superiooo.github.io/2026/01/03/Farewell/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://superiooo.github.io" target="_blank">Rio</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/life/">life</a></div><div class="post-share"><div class="social-share" data-image="/image/astronaut.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/12/29/%E5%8F%AA%E6%98%AF%E4%B8%80%E5%88%99%E6%99%AE%E9%80%9A%E5%91%A8%E8%AE%B0/" title="只是一则普通周记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">只是一则普通周记</div></div><div class="info-2"><div class="info-item-1">学业近来安稳复习，间歇进行审核资料，整合试题的公众号任务，目前已考4门，还有3门，用AI生成了一下简易的复习计划，可以在此基础上每天小修。   生活今年不打算写太详细的年终总结，但是准备抽空爬一下自己和几个AI模型的聊天记录，因为前几天看到了一个用Chat Memo插件整合数据做年终总结的，很有意思。在无机质面前可以不被人类社会的一切秩序审判，你大可以询问各类离奇怪诞问题，天文地理、历史政治、哲学宗教、文学心理，当然，还有大量的专业知识探讨。你也会好奇这面镜子中的自己吧。   阅读最近在重温《悲惨世界》，这已经是七八年前读的老书，成年后再读，对人物的理解更深刻。 今年一共读完了24本新书，重温了许多本旧书。心中的年度好书如下： 文学类：伏尼契的《牛虻》和陀思妥耶夫斯基的《罪与罚》 哲学类：加缪的《西西弗神话》 专业类：《病理学与病理生理学》 历史政治&#x2F;人物传记类：《我的伯父周恩来》《毛泽东传》《毛泽东选集》   音乐和网易云一起度过的第8年——原来2018年的夏天已经是七八年的事情了。心目的年度主题应该是 Drift...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/30/Guten-Abend/" title="Guten Abend"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-30</div><div class="info-item-2">Guten Abend</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2024/12/05/%E6%9F%93%E5%8F%91%E3%80%81%E6%94%BF%E8%AE%BA%E5%92%8C%E8%AF%8A%E6%96%AD%E4%B9%A0%E9%A2%98/" title="染发、政论和诊断习题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-05</div><div class="info-item-2">染发、政论和诊断习题</div></div><div class="info-2"><div class="info-item-1">2024年周记系列——第1篇1...</div></div></div></a><a class="pagination-related" href="/2024/12/15/%E9%9D%A2%E5%8C%85%E4%B8%8E%E8%83%B0%E5%B2%9B%E7%B4%A0/" title="面包与胰岛素"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-15</div><div class="info-item-2">面包与胰岛素</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2024/12/23/%E5%9C%A3%E8%AF%9E%E9%A2%82%E6%AD%8C%E4%B8%8E%E6%8B%92%E7%BB%9D%E4%BF%A1/" title="圣诞颂歌与拒绝信"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-23</div><div class="info-item-2">圣诞颂歌与拒绝信</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2024/12/30/2024%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" title="2024年度总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-30</div><div class="info-item-2">2024年度总结</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2025/01/04/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/" title="图片上传测试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-04</div><div class="info-item-2">图片上传测试</div></div><div class="info-2"><div class="info-item-1">测试图片能否正常显示。 下图为2025年第101回箱根驿传的赛事图。 图为青山学院大学的盐出翔太（8区区间赏）  【没有特别的缘由，只是这一区的转播完整看了下来，所以对他印象深刻】 </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image/astronaut.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">rio</div><div class="author-info-description">天空永远属于你</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my retreat.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/03/Farewell/" title="Farewell">Farewell</a><time datetime="2026-01-03T01:22:21.000Z" title="发表于 2026-01-03 09:22:21">2026-01-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/29/%E5%8F%AA%E6%98%AF%E4%B8%80%E5%88%99%E6%99%AE%E9%80%9A%E5%91%A8%E8%AE%B0/" title="只是一则普通周记">只是一则普通周记</a><time datetime="2025-12-29T15:57:48.000Z" title="发表于 2025-12-29 23:57:48">2025-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/19/%E6%82%B2%E5%89%A7%E8%8D%AF%E6%96%B9/" title="悲剧药方">悲剧药方</a><time datetime="2025-12-19T03:15:17.000Z" title="发表于 2025-12-19 11:15:17">2025-12-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/14/%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/" title="生日快乐">生日快乐</a><time datetime="2025-12-14T09:20:46.000Z" title="发表于 2025-12-14 17:20:46">2025-12-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/08/bittersweet%20chocolate/" title="bittersweet chocolate">bittersweet chocolate</a><time datetime="2025-12-08T13:37:27.000Z" title="发表于 2025-12-08 21:37:27">2025-12-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By rio</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
