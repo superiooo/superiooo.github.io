@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>喜夜 | Rio</title><meta name="author" content="rio"><meta name="copyright" content="rio"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="理想中的生存土壤——一个人可以无所顾虑地休息、浪费时间，欢笑、莫名其妙地快乐。不需要许多额外的技能、强大的精神韧性、超越年龄的智慧，也不必须去寻求解答或者指引，就能凭借天真自性与环境两不相伤。 若干记录 1、某天跟妈妈联系时，随手给她拍了张宿舍桌面，我说有点乱该收拾了，就放下手机去洗漱了。十分钟后发现她问我瓶里装的是什么药。我起初没明白什么意思，再一看发现在模糊照片的角落，有两个小小的白色药瓶，里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="喜夜">
+<meta property="og:url" content="http://superiooo.github.io/2026/03/30/%E5%96%9C%E5%A4%9C/index.html">
+<meta property="og:site_name" content="Rio">
+<meta property="og:description" content="理想中的生存土壤——一个人可以无所顾虑地休息、浪费时间，欢笑、莫名其妙地快乐。不需要许多额外的技能、强大的精神韧性、超越年龄的智慧，也不必须去寻求解答或者指引，就能凭借天真自性与环境两不相伤。 若干记录 1、某天跟妈妈联系时，随手给她拍了张宿舍桌面，我说有点乱该收拾了，就放下手机去洗漱了。十分钟后发现她问我瓶里装的是什么药。我起初没明白什么意思，再一看发现在模糊照片的角落，有两个小小的白色药瓶，里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://superiooo.github.io/image/astronaut.jpg">
+<meta property="article:published_time" content="2026-03-29T16:20:23.000Z">
+<meta property="article:modified_time" content="2026-03-29T16:37:11.155Z">
+<meta property="article:author" content="rio">
+<meta property="article:tag" content="weekly diary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://superiooo.github.io/image/astronaut.jpg"><link rel="shortcut icon" href="/image/32.png"><link rel="canonical" href="http://superiooo.github.io/2026/03/30/%E5%96%9C%E5%A4%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '喜夜',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/灯塔.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Rio</span></a><a class="nav-page-title" href="/"><span class="site-name">喜夜</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">喜夜</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-29T16:20:23.000Z" title="发表于 2026-03-30 00:20:23">2026-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-29T16:37:11.155Z" title="更新于 2026-03-30 00:37:11">2026-03-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>理想中的生存土壤——一个人可以无所顾虑地休息、浪费时间，欢笑、莫名其妙地快乐。不需要许多额外的技能、强大的精神韧性、超越年龄的智慧，也不必须去寻求解答或者指引，就能凭借天真自性与环境两不相伤。</strong></p>
+<p>若干记录</p>
+<p>1、某天跟妈妈联系时，随手给她拍了张宿舍桌面，我说有点乱该收拾了，就放下手机去洗漱了。十分钟后发现她问我瓶里装的是什么药。我起初没明白什么意思，再一看发现在模糊照片的角落，有两个小小的白色药瓶，里面是我的维生素片。不知道那十分钟里妈妈在想什么。</p>
+<p>2、她生了重病，我去医院看望她。我写了一句，等她回来，我们一起去见春天。春意正浓时分，我们一起去烈士公园赏花，她戴着口罩，把自己罩在帽子里，笑得勉强。新生的美丽环绕着我们，我对命运的不确定性沉默而哀痛。</p>
+<p>3、她出考研初试成绩那天，我做了个梦，我梦见了她的成绩和她未来的生活。梦非常接近现实。在我的梦里，她和她对象在北京一座大厦下的草坪上，阳光普照，温暖而朦胧，我们都在笑。她复试那天，临近中午的某个时刻，我突然想给她发条消息，一个“加油”的表情后，她说她正准备进入复试考场，马上轮到她。面完她说我们是不是有心灵感应，怎么这么巧合。后来她告诉我，她已经初步录取了。能以这种奇妙的方式参与她的人生节点，好幸福。</p>
+<p>4、我的耳垂饱满而略垂，还没打过耳洞，捏在手里软软弹弹。前阵子想尝试一下佩戴耳饰，于是买了磁吸的耳夹，有腹背相夹的黑色的圆盘，扣在耳廓上的十字架等。我一般只带单边，有种不良的感觉，喜欢。还在手腕上带了手环，一条是黄蓝相间的编织绳坠着短流苏，一条是红色的玛瑙串拥着枚略大的翠珠。都不是什么昂贵的饰品，但起到让我与现实保持联系的作用，抬手看着绕尺动脉上环着的色彩鲜艳的物件，或者揉捏稍有发烫刺痛的耳垂，我都会平静几秒。</p>
+<p>5、搞同人CP我总是搞无差，杂食党的下场是吃两家饭挨两家打，我只默默品鉴，继续单机构思产出。有时我也会思考，性行为中的分工差异究竟通过怎么样的方式影响了角色塑造。</p>
+<p>6、还是经常会恶心，流泪流汗之后会好很多，便三天两头往健身房跑。一思考就恶心。</p>
+<p>7、人心有一种让人恼火的倾向，只把能压倒人的称之为命运。但是幸福也以它自己的方式表现得毫无理由，因为它来就来了，无法回避。人们都追问痛苦的命运，而坦然接受幸福的命运。</p>
+<p>8、最近在看《多谈谈问题（单读33）》，好听的歌曲《なぜなぜ》《喜夜》。</p>
+<p>9、自我意识过剩的青春伤痛文学沉浸者，回避社会化极端内耗不吃压力之人，抑郁质人格左右脑互搏这一块。我真的应该少读点文学作品，或者等待形成新的惯性接替我去生活。</p>
+<p>想得我好累。晚安。我对于下一周的想法是我得找机会搞点虾吃。</p>
+<p><strong>附美图！</strong></p>
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20260330003346062.jpg" alt="95e2e7da35620deb119d41ba79f7f63b" style="zoom: 50%;" />
+
+<img src="https://rio456.oss-cn-beijing.aliyuncs.com/undefined20260330003353851.jpg" alt="58537ba536799d7940c032e99630cbb1" style="zoom:14%;" />
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://superiooo.github.io">rio</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://superiooo.github.io/2026/03/30/%E5%96%9C%E5%A4%9C/">http://superiooo.github.io/2026/03/30/%E5%96%9C%E5%A4%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://superiooo.github.io" target="_blank">Rio</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/weekly-diary/">weekly diary</a></div><div class="post-share"><div class="social-share" data-image="/image/astronaut.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/03/23/%E4%B8%89%E6%9C%88%E8%B7%B3%E8%BF%9B%E6%B9%98%E6%B1%9F%EF%BC%9A%E5%9C%A8%E7%BB%88%E5%B1%80%E5%90%8E%E6%80%9D%E8%80%83%E5%A6%82%E6%9E%9C/" title="三月跳进湘江：在终局后思考如果"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">三月跳进湘江：在终局后思考如果</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/11/02/%E5%B9%B4%E5%B0%91%E8%BD%BB%E7%8B%82%EF%BC%8C%E5%B9%B8%E7%A6%8F%E6%97%B6%E5%85%89/" title="年少轻狂，幸福时光"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-02</div><div class="info-item-2">年少轻狂，幸福时光</div></div><div class="info-2"><div class="info-item-1">复盘一下10月 基本情况： 第一周 国庆假期，参加了大表哥的婚礼；在家陪伴家人，给妈妈和弟弟过了生日。 第二周 联系了Dr.X 并旁听了组会；与S学姐沟通，得知csc的一个项目，着手申请。 第三周 提交CV、个人陈述和两份推荐信。 第四周...</div></div></div></a><a class="pagination-related" href="/2025/11/10/%E8%BF%99%E6%98%AF%E4%BD%A0%E7%95%99%E7%BB%99%E6%88%91%E7%9A%84%EF%BC%8C%E6%88%91%E6%98%AF%E4%B8%8D%E6%98%AF%E4%B9%9F%E7%95%99%E7%BB%99%E4%BA%86%E4%BD%A0/" title="这是你留给我的，我是不是也留给了你?"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-10</div><div class="info-item-2">这是你留给我的，我是不是也留给了你?</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2025/11/16/period/" title="period"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-16</div><div class="info-item-2">period</div></div><div class="info-2"><div class="info-item-1">1...</div></div></div></a><a class="pagination-related" href="/2025/11/24/Daytime/" title="Illusionary Daytime"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-24</div><div class="info-item-2">Illusionary Daytime</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2025/12/01/%E9%98%B4%E5%87%89%E5%A4%84%E3%80%81%E5%B8%BD%E5%AD%90%E4%B8%8E%E9%A3%8E%E9%93%83/" title="阴凉处、帽子与风铃"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-01</div><div class="info-item-2">阴凉处、帽子与风铃</div></div><div class="info-2"><div class="info-item-1">1...</div></div></div></a><a class="pagination-related" href="/2025/12/08/bittersweet%20chocolate/" title="bittersweet chocolate"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-12-08</div><div class="info-item-2">bittersweet chocolate</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image/astronaut.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">rio</div><div class="author-info-description">天空永远属于你</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my retreat.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/30/%E5%96%9C%E5%A4%9C/" title="喜夜">喜夜</a><time datetime="2026-03-29T16:20:23.000Z" title="发表于 2026-03-30 00:20:23">2026-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/23/%E4%B8%89%E6%9C%88%E8%B7%B3%E8%BF%9B%E6%B9%98%E6%B1%9F%EF%BC%9A%E5%9C%A8%E7%BB%88%E5%B1%80%E5%90%8E%E6%80%9D%E8%80%83%E5%A6%82%E6%9E%9C/" title="三月跳进湘江：在终局后思考如果">三月跳进湘江：在终局后思考如果</a><time datetime="2026-03-23T14:33:53.000Z" title="发表于 2026-03-23 22:33:53">2026-03-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/16/%E5%AF%B9%E8%AF%9DEggo%EF%BC%9A%E5%90%8C%E4%BA%BA%E5%88%9B%E4%BD%9C%E4%B8%8E%E7%88%B1%E7%9A%84%E8%89%BA%E6%9C%AF/" title="对话Eggo：同人创作与爱的艺术">对话Eggo：同人创作与爱的艺术</a><time datetime="2026-03-16T11:31:16.000Z" title="发表于 2026-03-16 19:31:16">2026-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/14/%E8%80%8C%E6%9F%90%E6%9F%90%E5%B9%B6%E4%B8%8D%E7%9F%A5%E9%81%93/" title="而某某并不知道">而某某并不知道</a><time datetime="2026-03-14T15:13:30.000Z" title="发表于 2026-03-14 23:13:30">2026-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/28/%E6%8A%95%E6%8E%B7/" title="投掷">投掷</a><time datetime="2026-02-28T14:25:51.000Z" title="发表于 2026-02-28 22:25:51">2026-02-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By rio</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
